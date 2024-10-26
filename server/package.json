@@ -1,0 +1,22 @@
+{
+  "name": "wxba_server",
+  "version": "1.0.0",
+  "description": "Backend server and SCAL framework Node runner",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Imam Abubakar",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
