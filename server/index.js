@@ -8,6 +8,7 @@ const ICO = require("./model/ico.model");
 const Airdrop = require("./model/airdrop.model");
 const TokenLock = require("./model/lock.model");
 
+
 //database connection
 connection();
 
