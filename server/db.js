@@ -9,6 +9,7 @@ module.exports = () => {
         writeConcern: { w: 'majority', j: true, wtimeout: 1000 }
     };
     try {
+        console.log('Database URI:', process.env.DB);
         mongoose.connect(process.env.DB, connectionParams);
         console.log('Connected to database succesfully');
     } catch (error) {
