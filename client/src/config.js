@@ -46,7 +46,7 @@ switch (import.meta.env.VITE_APP_ENV) {
     break;
   case "mainnet":
     config = {
-      API: "https://safe-launch-api-mainnet.vercel.app/api/v1",
+      API: "https://safe-launchpad-mainnet-api.vercel.app/api/v1",
       PLATFORM_OWNER_ADDRESS:
         "UQDz0SbZpnuFAuxZBCOMxE24CIjhw9bKc1OamHITrrvLMxIp",
       ADMIN_WALLETS: [
