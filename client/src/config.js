@@ -35,9 +35,7 @@ switch (import.meta.env.VITE_APP_ENV) {
       PLATFORM_OWNER_ADDRESS:
         "UQDz0SbZpnuFAuxZBCOMxE24CIjhw9bKc1OamHITrrvLMxIp",
       ADMIN_WALLETS: [
-        "UQC8mzdlvXH8GKYV_shfnAzA7nlWbsD89fjBE1nRpaQxRPr5",
         "UQDrRLLjPYZUXQHIZxeeDEIJ8D6xK3IqWuW_D9RPeChqpdwn",
-        "UQDvM-QccYWQifKD6u8C4OPUNwjf6cRVVsTdlklQH2UcVFz2",
       ],
       NETWORK: "mainnet",
       API_URL: "https://tonapi.io/v2/accounts/",
@@ -50,9 +48,7 @@ switch (import.meta.env.VITE_APP_ENV) {
       PLATFORM_OWNER_ADDRESS:
         "UQDz0SbZpnuFAuxZBCOMxE24CIjhw9bKc1OamHITrrvLMxIp",
       ADMIN_WALLETS: [
-        "UQC8mzdlvXH8GKYV_shfnAzA7nlWbsD89fjBE1nRpaQxRPr5",
         "UQDrRLLjPYZUXQHIZxeeDEIJ8D6xK3IqWuW_D9RPeChqpdwn",
-        "UQDvM-QccYWQifKD6u8C4OPUNwjf6cRVVsTdlklQH2UcVFz2",
       ],
       NETWORK: "mainnet",
       API_URL: "https://tonapi.io/v2/accounts/",
