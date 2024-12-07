@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
-  const fetchedUrl = "/safet-bg.svg";
+  const fetchedUrl = "/safet-bg-cropped.png";
   return (
     <div className="flex w-full flex-col gap-6 mb-24">
       <div
