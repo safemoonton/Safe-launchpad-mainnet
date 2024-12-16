@@ -171,23 +171,23 @@ const Layout = ({ children }) => {
                     />
                     <MenuIcon
                       icon={<PiRocketLaunchDuotone size="25px" />}
-                      title="SAFE Launch [SOON]"
+                      title="SAFE Launch [Soon]"
   isOpen={false}
                       url="/"
   toggleDropdown={() => {}} // brak akcji
   isMenuOpen={false} // bez zmian menu
   toggleMenu={() => {}}
-                      className="cursor-not-allowed opacity-50"
+  isComingSoon={true}
                     />
                     <MenuIcon
                       icon={<RiShieldLine size="25px" />}
-                      title="Private Sales [SOON]"
+                      title="Private Sales [Soon]"
   isOpen={false}
                       url="/"
   toggleDropdown={() => {}} // brak akcji
   isMenuOpen={false} // bez zmian menu
   toggleMenu={() => {}}
-                      className="cursor-not-allowed opacity-50"
+  isComingSoon={true}
                     />
                     <MenuIcon
                       icon={<RiSignalTowerLine size="25px" />}
