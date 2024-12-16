@@ -177,6 +177,7 @@ const Layout = ({ children }) => {
                       toggleDropdown={() => toggleSubmenu(0)}
                       isMenuOpen={isMenuOpen}
                       toggleMenu={() => setIsMenuOpen(false)}
+                      className="cursor-not-allowed opacity-50"
                     />
                     <MenuIcon
                       icon={<RiShieldLine size="25px" />}
@@ -186,6 +187,7 @@ const Layout = ({ children }) => {
                       toggleDropdown={() => toggleSubmenu(4)}
                       isMenuOpen={isMenuOpen}
                       toggleMenu={() => setIsMenuOpen(false)}
+                      className="cursor-not-allowed opacity-50"
                     />
                     <MenuIcon
                       icon={<RiSignalTowerLine size="25px" />}
