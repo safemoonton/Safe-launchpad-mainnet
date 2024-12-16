@@ -171,7 +171,7 @@ const Layout = ({ children }) => {
                     />
                     <MenuIcon
                       icon={<PiRocketLaunchDuotone size="25px" />}
-                      title="SAFE Launch [Soon]"
+                      title="SAFE Launch"
   isOpen={false}
                       url="/"
   toggleDropdown={() => {}} // brak akcji
@@ -181,7 +181,7 @@ const Layout = ({ children }) => {
                     />
                     <MenuIcon
                       icon={<RiShieldLine size="25px" />}
-                      title="Private Sales [Soon]"
+                      title="Private Sales"
   isOpen={false}
                       url="/"
   toggleDropdown={() => {}} // brak akcji
