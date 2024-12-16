@@ -173,7 +173,7 @@ const Layout = ({ children }) => {
                       icon={<PiRocketLaunchDuotone size="25px" />}
                       title="SAFE Launch"
                       isOpen={submenuOpen[0]}
-                      url="/safe-launch"
+                      url="/"
                       toggleDropdown={() => toggleSubmenu(0)}
                       isMenuOpen={isMenuOpen}
                       toggleMenu={() => setIsMenuOpen(false)}
@@ -182,7 +182,7 @@ const Layout = ({ children }) => {
                       icon={<RiShieldLine size="25px" />}
                       title="Private Sales"
                       isOpen={submenuOpen[4]}
-                      url="/safe-launch/private"
+                      url="/"
                       toggleDropdown={() => toggleSubmenu(4)}
                       isMenuOpen={isMenuOpen}
                       toggleMenu={() => setIsMenuOpen(false)}
