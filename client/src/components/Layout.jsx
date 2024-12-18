@@ -95,7 +95,7 @@ const Layout = ({ children }) => {
               >
                 <img src={Logo} alt="logo" className="w-12 lg:w-14" />
                 <span className="hidden md:block lg:block font-medium tracking-wider">
-                  SafemoonPad
+                  Safemoon Launchpad on TON
                 </span>
               </Link>
               <div className="flex gap-2">
