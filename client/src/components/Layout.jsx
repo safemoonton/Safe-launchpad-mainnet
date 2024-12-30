@@ -176,7 +176,7 @@ const Layout = ({ children }) => {
   toggleDropdown={() => toggleSubmenu(0)}
   isMenuOpen={isMenuOpen}
   toggleMenu={() => setIsMenuOpen(false)}
-  isComingSoon={true}
+
 />
 
 <MenuIcon
@@ -186,7 +186,7 @@ const Layout = ({ children }) => {
   toggleDropdown={() => toggleSubmenu(4)}
   isMenuOpen={isMenuOpen}
   toggleMenu={() => setIsMenuOpen(false)}
-  isComingSoon={true}
+
 />
                     <MenuIcon
                       icon={<RiSignalTowerLine size="25px" />}
