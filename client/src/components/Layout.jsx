@@ -288,7 +288,6 @@ const Layout = ({ children }) => {
                       <p>&copy; {currentYear} Safemoon Launchpad Beta 
                         <RiQuestionLine
                           title="Aplikacja jest w wersji beta. Mogą występować błędy oraz problemy techniczne. Korzystając z aplikacji, zgadzasz się, że twórcy nie ponoszą odpowiedzialności za jakiekolwiek straty, w tym utratę środków."
-                          style={{ fontSize: "24px", cursor: "pointer" }}
                         />
                       </p>
                     </footer>
