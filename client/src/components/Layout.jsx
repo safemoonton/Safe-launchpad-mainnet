@@ -286,9 +286,11 @@ const Layout = ({ children }) => {
                     />
                     <footer className="text-center text-xs my-4">
                       <p>&copy; {currentYear} Safemoon Launchpad Beta 
-                        <RiQuestionLine
-                          title="Aplikacja jest w wersji beta. Mogą występować błędy oraz problemy techniczne. Korzystając z aplikacji, zgadzasz się, że twórcy nie ponoszą odpowiedzialności za jakiekolwiek straty, w tym utratę środków."
-                        />
+                        <i>
+                          <RiQuestionLine
+                            title="Aplikacja jest w wersji beta. Mogą występować błędy oraz problemy techniczne. Korzystając z aplikacji, zgadzasz się, że twórcy nie ponoszą odpowiedzialności za jakiekolwiek straty, w tym utratę środków."
+                          />
+                        </i>
                       </p>
                     </footer>
                   </div>
