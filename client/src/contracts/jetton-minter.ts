@@ -14,7 +14,7 @@ import walletHex from "./jetton-wallet.compiled";
 import minterHex from "./jetton-minter.compiled";
 import { NFTDictValueSerializer } from "../helpers/nftDict";
 
-export const JETTON_DEPLOY_GAS = 250000000; // toNano(0.25)
+export const JETTON_DEPLOY_GAS = 50000000; // toNano(0.25)
 
 export type JettonMetaDataKeys =
   | "name"
