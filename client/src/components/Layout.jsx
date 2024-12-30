@@ -285,8 +285,9 @@ const Layout = ({ children }) => {
                       toggleMenu={() => setIsMenuOpen(false)}
                     />
                     <footer className="text-center text-xs my-4">
-                      <p>&copy; {currentYear} Safemoon Launchpad Beta 
+                      <p>
                         <i>
+                          &copy; {currentYear} Safemoon Launchpad Beta 
                           <RiQuestionLine
                             title="Aplikacja jest w wersji beta. Mogą występować błędy oraz problemy techniczne. Korzystając z aplikacji, zgadzasz się, że twórcy nie ponoszą odpowiedzialności za jakiekolwiek straty, w tym utratę środków."
                           />
