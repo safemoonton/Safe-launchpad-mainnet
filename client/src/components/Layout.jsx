@@ -285,13 +285,10 @@ const Layout = ({ children }) => {
                       toggleMenu={() => setIsMenuOpen(false)}
                     />
                     <footer className="text-center text-xs my-4">
-                      <p>
-                        <i>
-                          &copy; {currentYear} Safemoon Launchpad Beta 
-                          <RiQuestionLine
-                            title="Aplikacja jest w wersji beta. Mogą występować błędy oraz problemy techniczne. Korzystając z aplikacji, zgadzasz się, że twórcy nie ponoszą odpowiedzialności za jakiekolwiek straty, w tym utratę środków."
-                          />
-                        </i>
+                      <p>&copy; {currentYear} Safemoon Launchpad Beta 
+                        <div title="To jest tekst wyświetlany po najechaniu" style={{ display: "inline-block" }}>
+                          <RiQuestionLine style={{ fontSize: "24px", cursor: "pointer" }} />
+                        </div>
                       </p>
                     </footer>
                   </div>
