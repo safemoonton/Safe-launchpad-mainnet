@@ -311,7 +311,7 @@ const Layout = ({ children }) => {
                               style={{
                                 position: "absolute",
                                 bottom: "30px",
-                                left: "25rem",
+                                left: "35rem",
                                 transform: "translateX(-50%)",
                                 backgroundColor: "black",
                                 color: "white",
