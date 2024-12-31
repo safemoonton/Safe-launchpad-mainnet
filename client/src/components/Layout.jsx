@@ -26,7 +26,10 @@ import { Link } from "react-router-dom";
 import { isAdmin } from "../assets/admin";
 import config from "../config";
 
+
+
 const Layout = ({ children }) => {
+  const [showTooltip, setShowTooltip] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const [stars, setStars] = useState(null);
@@ -286,9 +289,35 @@ const Layout = ({ children }) => {
                     />
                     <footer className="text-center text-xs my-4">
                       <p>&copy; {currentYear} Safemoon Launchpad Beta 
-                        <span title="To jest tekst wyświetlany po najechaniu" style={{ display: "inline-block" }}>
-                          <RiQuestionLine/>
-                        </span>
+                        <div
+                          style={{ position: "relative", display: "inline-block" }}
+                          onMouseEnter={() => setShowTooltip(true)}
+                          onMouseLeave={() => setShowTooltip(false)}
+                        >
+                          {/* Ikona */}
+                          <RiQuestionLine style={{ fontSize: "24px", cursor: "pointer" }} />
+                    
+                          {/* Tooltip */}
+                          {showTooltip && (
+                            <div
+                              style={{
+                                position: "absolute",
+                                bottom: "30px",
+                                left: "50%",
+                                transform: "translateX(-50%)",
+                                backgroundColor: "black",
+                                color: "white",
+                                padding: "5px",
+                                borderRadius: "4px",
+                                fontSize: "12px",
+                                whiteSpace: "nowrap",
+                                zIndex: 1000,
+                              }}
+                            >
+                              <b>The application is in beta version.</b> There may be bugs and technical issues. By using the application, you agree that the creators are not responsible for any losses, including the loss of funds.
+                            </div>
+                          )}
+                        </div>
                       </p>
                     </footer>
                   </div>
