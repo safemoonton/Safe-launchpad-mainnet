@@ -297,6 +297,14 @@ const Layout = ({ children }) => {
                           {/* Ikona */}
                           <RiQuestionLine/>
                     
+
+                        </div>
+                      </p>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+              {/* ======= BODY CONTENT CONTAINER  ======= */}
                           {/* Tooltip */}
                           {showTooltip && (
                             <div
@@ -320,13 +328,6 @@ const Layout = ({ children }) => {
                               are not responsible for any losses, including the loss of funds.
                             </div>
                           )}
-                        </div>
-                      </p>
-                    </footer>
-                  </div>
-                </div>
-              </div>
-              {/* ======= BODY CONTENT CONTAINER  ======= */}
               <div
                 className={`w-full lg:flex xl:ml-80  lg:justify-center h-max text-base text-white mx-4 mt-4 md:m-8 ease-out duration-100  ${
                   isMenuOpen ? "hidden md:block" : ""
