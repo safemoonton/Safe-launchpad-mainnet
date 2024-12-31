@@ -178,6 +178,17 @@ const TokenLockDetails = () => {
                   </div>
                 </div>
                 <div className="mt-2 pb-2 flex justify-between items-center border-b dark:border-gray-600">
+                  Lock Contract Address
+                  <div>
+                    {makeElipsisAddress(lock.lockAddress, 7)}
+                    <CopyToClipboard text={lock.lockAddress} onCopy={handleCopy}>
+                      <button className="ml-2">
+                        {copied ? <FaCheckCircle /> : <FaCopy />}
+                      </button>
+                    </CopyToClipboard>
+                  </div>
+                </div>
+                <div className="mt-2 pb-2 flex justify-between items-center border-b dark:border-gray-600">
                   Lock Until{" "}
                   <div>{formatDateTime(lock.tgeDate)} (UTC)</div>
                 </div>
