@@ -295,7 +295,7 @@ const Layout = ({ children }) => {
                           onMouseLeave={() => setShowTooltip(false)}
                         >
                           {/* Ikona */}
-                          <RiQuestionLine/>
+                          <RiQuestionLine style={{ margin: 4 4 4 auto,  cursor: "pointer" }} />
                     
 
                         </div>
