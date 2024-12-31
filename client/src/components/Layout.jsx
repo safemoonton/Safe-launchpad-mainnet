@@ -311,7 +311,7 @@ const Layout = ({ children }) => {
                               style={{
                                 position: "absolute",
                                 bottom: "30px",
-                                left: "35rem",
+                                left: "30rem",
                                 transform: "translateX(-50%)",
                                 backgroundColor: "black",
                                 color: "white",
@@ -324,8 +324,8 @@ const Layout = ({ children }) => {
                             >
                               The application is in beta version. <br />
                               There may be bugs and technical issues. <br />
-                              By using the application, you agree that the creators <br />
-                              are not responsible for any losses, including the loss of funds.
+                              By using the application, you agree that the creators are not <br />
+                              responsible for any losses, including the loss of funds.
                             </div>
                           )}
               <div
