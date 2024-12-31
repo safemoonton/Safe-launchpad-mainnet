@@ -509,7 +509,7 @@ const CreateLock = () => {
                           className="text-white dark:text-gray-300 text-md font-medium tracking-wide block mb-2"
                           htmlFor="tgeDate"
                         >
-                          Lock until (Local time)
+                          Lock until (UTC)
                           <span className="text-red-500">*</span>
                         </label>
                         <input
