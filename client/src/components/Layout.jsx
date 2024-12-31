@@ -295,7 +295,7 @@ const Layout = ({ children }) => {
                           onMouseLeave={() => setShowTooltip(false)}
                         >
                           {/* Ikona */}
-                          <RiQuestionLine style={{ fontSize: "24px", cursor: "pointer" }} />
+                          <RiQuestionLine/>
                     
                           {/* Tooltip */}
                           {showTooltip && (
@@ -314,7 +314,7 @@ const Layout = ({ children }) => {
                                 zIndex: 1000,
                               }}
                             >
-                              <b>The application is in beta version.</b> There may be bugs and technical issues. By using the application, you agree that the creators are not responsible for any losses, including the loss of funds.
+                              The application is in beta version. There may be bugs and technical issues. By using the application, you agree that the creators are not responsible for any losses, including the loss of funds.
                             </div>
                           )}
                         </div>
