@@ -286,9 +286,9 @@ const Layout = ({ children }) => {
                     />
                     <footer className="text-center text-xs my-4">
                       <p>&copy; {currentYear} Safemoon Launchpad Beta 
-                        <div title="To jest tekst wyświetlany po najechaniu" style={{ display: "inline-block" }}>
+                        <span title="To jest tekst wyświetlany po najechaniu" style={{ display: "inline-block" }}>
                           <RiQuestionLine/>
-                        </div>
+                        </span>
                       </p>
                     </footer>
                   </div>
