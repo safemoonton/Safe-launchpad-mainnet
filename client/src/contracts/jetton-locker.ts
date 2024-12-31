@@ -60,7 +60,7 @@ export class JettonLockup implements Contract {
         for (let _wallet of supportedWallets) jettonBalances.set(_wallet.hash, { balance: toNano('0') });
 
         await provider.internal(via, {
-            value: toNano('0.2'),
+            value: toNano('0.02'),
             sendMode: SendMode.PAY_GAS_SEPARATELY,
             body: beginCell()
                 .storeUint(0, 32 + 64)
@@ -76,7 +76,7 @@ export class JettonLockup implements Contract {
 
     async sendTransfer(provider: ContractProvider, via: Sender, to: Address) {
         await provider.internal(via, {
-            value: toNano('0.1'),
+            value: toNano('0.01'),
             sendMode: SendMode.PAY_GAS_SEPARATELY,
             body: beginCell()
                 .storeUint(0xf8a7ea5, 32)
@@ -94,7 +94,7 @@ export class JettonLockup implements Contract {
 
     async withdraw(provider: ContractProvider, via: Sender, to: Address, jettonWalletAddress: Address) {
         await provider.internal(via, {
-            value: toNano('0.1'),
+            value: toNano('0.01'),
             sendMode: SendMode.PAY_GAS_SEPARATELY,
             body: beginCell()
                 .storeUint(0xb5de5f9e, 32)
