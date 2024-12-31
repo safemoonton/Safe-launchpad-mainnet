@@ -314,7 +314,10 @@ const Layout = ({ children }) => {
                                 zIndex: 1000,
                               }}
                             >
-                              The application is in beta version. There may be bugs and technical issues. By using the application, you agree that the creators are not responsible for any losses, including the loss of funds.
+                              The application is in beta version. <br />
+                              There may be bugs and technical issues. <br />
+                              By using the application, you agree that the creators <br />
+                              are not responsible for any losses, including the loss of funds.
                             </div>
                           )}
                         </div>
