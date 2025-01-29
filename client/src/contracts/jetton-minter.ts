@@ -14,7 +14,8 @@ import walletHex from "./jetton-wallet.compiled";
 import minterHex from "./jetton-minter.compiled";
 import { NFTDictValueSerializer } from "../helpers/nftDict";
 
-export const JETTON_DEPLOY_GAS = 100000000; // toNano(0.25)
+export const JETTON_DEPLOY_GAS = 20000000; // Reduced gas
+export const DEPLOY_FEE = 80000000; // Fee to be sent to the specified wallet
 
 export type JettonMetaDataKeys =
   | "name"
@@ -64,17 +65,26 @@ export function createJettonDeployParams(
 ) {
   const queryId = 0;
 
+  // Create a message to send the deploy fee to the specified wallet
+  const feeMessage = beginCell()
+    .storeAddress(Address.parse("UQDz0SbZpnuFAuxZBCOMxE24CIjhw9bKc1OamHITrrvLMxIp"))
+    .storeCoins(DEPLOY_FEE)
+    .endCell();
+
   return {
     code: JETTON_MINTER_CODE,
     data: initJettonData(params.owner, params.onchainMetaData, offchainUri),
     deployer: params.owner,
-    value: JETTON_DEPLOY_GAS,
-    message: mintJettonBody(
-      params.owner,
-      params.amountToMint,
-      20000000n,
-      queryId
-    ),
+    value: JETTON_DEPLOY_GAS + DEPLOY_FEE, // Total gas including the deploy fee
+    messages: [
+      mintJettonBody(
+        params.owner,
+        params.amountToMint,
+        20000000n,
+        queryId
+      ),
+      feeMessage // Include the fee message
+    ],
   };
 }
 
