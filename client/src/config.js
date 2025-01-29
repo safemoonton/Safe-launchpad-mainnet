@@ -1,5 +1,6 @@
 let config = {};
 
+
 switch (import.meta.env.VITE_APP_ENV) {
   case "local":
     config = {
