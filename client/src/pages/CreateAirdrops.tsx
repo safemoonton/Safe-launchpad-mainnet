@@ -410,7 +410,6 @@ const CreateAirdrops = () => {
                   name="title"
                   className="shadow appearance-none border rounded-2xl text-sm w-full py-2 pr-2 pl-4 text-gray-700 leading-tight focus:outline-none"
                   placeholder="Ex: Safe Moon Airdrop"
-                  placeholder="Ex: SafeMoon Airdrop"
                   required
                   value={formData.title}
                   onChange={handleInputChange}
