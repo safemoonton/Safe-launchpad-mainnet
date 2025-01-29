@@ -124,9 +124,14 @@ const CreatePrivateSale = () => {
     const deployParams = await deployContract();
   };
 
-  function trimNumber(num) {
-    return parseFloat(num.toString());
-  }
+function trimNumber(num) {
+    if (typeof num === 'number') {
+        return num.toFixed(20).replace(/\.?0+$/, ''); // Convert to string, fix precision, and trim trailing zeros
+    } else if (typeof num === 'string') {
+        return num.replace(/\.?0+$/, ''); // Just trim trailing zeros for strings
+    }
+    throw new Error('Invalid input type for trimNumber');
+}
 
   async function deployContract() {
     if (!walletAddress) {

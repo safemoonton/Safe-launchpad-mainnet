@@ -32,9 +32,9 @@ const TokenLockDetails = () => {
     getData();
   }, []);
 
-  console.log(lock?.tgeDate && isTimeGreaterThanCurrentNormal(lock?.tgeDate));
+  //console.log(lock?.tgeDate && isTimeGreaterThanCurrentNormal(lock?.tgeDate));
 
-  console.log("TEST", isTimeGreaterThanCurrentNormal("2024-08-06T17:00:00.000Z"));
+  //console.log("TEST", isTimeGreaterThanCurrentNormal("2024-08-06T17:00:00.000Z"));
 
   async function getData() {
     const data = await lockService.getLock(lockAddress);
@@ -178,19 +178,7 @@ const TokenLockDetails = () => {
                   </div>
                 </div>
                 <div className="mt-2 pb-2 flex justify-between items-center border-b dark:border-gray-600">
-                  Lock Contract Address
-                  <div>
-                    {makeElipsisAddress(lock.lockAddress, 7)}
-                    <CopyToClipboard text={lock.lockAddress} onCopy={handleCopy}>
-                      <button className="ml-2">
-                        {copied ? <FaCheckCircle /> : <FaCopy />}
-                      </button>
-                    </CopyToClipboard>
-                  </div>
-                </div>
-                <div className="mt-2 pb-2 flex justify-between items-center border-b dark:border-gray-600">
-                  Lock Until{" "}
-                  <div>{formatDateTime(lock.tgeDate)} (UTC)</div>
+                  Lock Until <div>{formatDateTime(lock.tgeDate)} (UTC)</div>
                 </div>
               </div>
             </div>

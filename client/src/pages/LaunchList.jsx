@@ -11,7 +11,7 @@ import TonLogo from "../assets/images/ton-logo.png";
 import { useTonAddress } from "@tonconnect/ui-react";
 import { Address } from "ton-core";
 import icoService from "../api/icoService";
-import { formatNumber } from "../helpers";
+import { formatNumber, normalizeAddress } from "../helpers";
 
 const LaunchList = () => {
   const navigate = useNavigate();
@@ -90,7 +90,7 @@ const LaunchList = () => {
 
     if (filter === "My") {
       filteredData = filteredData.filter(
-        (launchpad) => launchpad.creatorAddress === walletAddress
+        (launchpad) => normalizeAddress(launchpad.creatorAddress) === normalizeAddress(walletAddress)
       );
     }
 

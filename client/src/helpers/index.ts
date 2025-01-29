@@ -22,6 +22,10 @@ export const makeElipsisAddress = (
   return `${firstPart}...${secondPart}`;
 };
 
+export const normalizeAddress = (address: any) => {
+  return address ? address.toLowerCase().trim() : '';
+};
+
 export function checkImageURL(url: string) {
   return url.match(/\.(jpeg|jpg|gif|png|svg)$/) != null;
 }

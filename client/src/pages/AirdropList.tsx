@@ -3,7 +3,11 @@ import { RiSearch2Line, RiRocket2Fill } from "react-icons/ri";
 import { useTonAddress, useTonConnectUI } from "@tonconnect/ui-react";
 import airdropService from "../api/airdropService";
 import { Link, useNavigate } from "react-router-dom";
-import { parseAirdropEntriesNormal, checkImageURL } from "../helpers";
+import {
+  parseAirdropEntriesNormal,
+  checkImageURL,
+  normalizeAddress,
+} from "../helpers";
 //@ts-ignore
 import DefaultImage from "../assets/images/default.png";
 
@@ -65,8 +69,11 @@ const AirdropList = () => {
     if (filter === "All") {
       setFilteredAirdrops(airdrops);
     } else {
-      let newFilteredAirdrops = airdrops?.filter((airdrop) => {
-        return airdrop.creatorAddress === walletAddress;
+      const newFilteredAirdrops = airdrops?.filter((airdrop) => {
+        return (
+          normalizeAddress(airdrop.creatorAddress) ===
+          normalizeAddress(walletAddress)
+        );
       });
       setFilteredAirdrops(newFilteredAirdrops);
     }

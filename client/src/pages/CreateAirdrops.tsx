@@ -82,7 +82,7 @@ const CreateAirdrops = () => {
         theme: "colored",
         transition: Flip,
       });
-      navigate(`/safe-drop/${tokenData.contract_address}`);
+      navigate(`/safe-drop/${data?._id}`);
     } catch (error) {
       console.log(error);
       toast.error("Error creating airdrop!");
@@ -410,6 +410,7 @@ const CreateAirdrops = () => {
                   name="title"
                   className="shadow appearance-none border rounded-2xl text-sm w-full py-2 pr-2 pl-4 text-gray-700 leading-tight focus:outline-none"
                   placeholder="Ex: Safe Moon Airdrop"
+                  placeholder="Ex: SafeMoon Airdrop"
                   required
                   value={formData.title}
                   onChange={handleInputChange}

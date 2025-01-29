@@ -119,9 +119,14 @@ const CreatePresale = () => {
     }
   }
 
-  function trimNumber(num) {
-    return parseFloat(num.toString());
-  }
+function trimNumber(num) {
+    if (typeof num === 'number') {
+        return num.toFixed(20).replace(/\.?0+$/, ''); // Convert to string, fix precision, and trim trailing zeros
+    } else if (typeof num === 'string') {
+        return num.replace(/\.?0+$/, ''); // Just trim trailing zeros for strings
+    }
+    throw new Error('Invalid input type for trimNumber');
+}
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -150,6 +155,12 @@ const CreatePresale = () => {
 
     //ICO DEPLOYMENT SETUP
     const owner = Address.parse(walletAddress);
+    console.log("TOKEN PRICE", formData.token_price);
+    console.log("TOKEN PRICE TRIMMED", trimNumber(formData.token_price));
+    console.log(
+      "TOKEN PRICE STRING",
+      toNano(trimNumber(formData.token_price).toString())
+    );
     const rate = toNano(trimNumber(formData.token_price).toString());
 
     const jettonIco = JettonIco.createFromConfig(

@@ -30,6 +30,7 @@ import { Airdrop } from "../contracts/airdrop";
 import { Address, beginCell, storeStateInit, Cell } from "ton-core";
 import { toNano, fromNano } from "@ton/core";
 import airdropHex from "../contracts/airdrop.compiled";
+import { normalizeAddress } from "../helpers";
 //@ts-ignore
 import DefaultImage from "../assets/images/default.png";
 
@@ -100,9 +101,10 @@ const AirdropDetails = () => {
       if (walletAddress) {
         const claim = claims.find(
           (claim) =>
-            claim.userAddress.toLowerCase() === walletAddress.toLowerCase()
+            normalizeAddress(claim.userAddress) ===
+            normalizeAddress(walletAddress)
         );
-        setClaimDetails(claim || null);
+        setClaimDetails(claim);
       }
       setAllClaims(claims);
 
@@ -558,8 +560,8 @@ const AirdropDetails = () => {
                   <div className="mt-2 pb-2 flex justify-between items-center border-b dark:border-gray-600">
                     Your Claimed{" "}
                     <div>
-                      {claimDetails !== null
-                        ? fromNano(claimDetails.amount)
+                      {claimDetails !== null && claimDetails?.amount
+                        ? fromNano(claimDetails?.amount)
                         : "0"}{" "}
                       {airdropDetails.tokenInfo.symbol}
                     </div>
@@ -571,7 +573,9 @@ const AirdropDetails = () => {
             {/************===== ADMIN SECTION + ALLOCATIONS LIST =====************/}
             <div className="flex flex-col lg:flex-row gap-4 mb-4">
               <div className="lg:w-2/3 p-4 md:p-6 bg-white text-safemoon-dark dark:bg-transparent dark:text-white border dark:border-gray-600 rounded-2xl">
-                <div className="font-semibold text-lg">Allocations ({allocations?.length})</div>
+                <div className="font-semibold text-lg">
+                  Allocations ({allocations?.length})
+                </div>
                 <ul>
                   {allocations?.length > 0 &&
                     allocations?.map((allocation, index) => (
@@ -671,7 +675,9 @@ const AirdropDetails = () => {
             {allClaims.length > 0 &&
               walletAddress == airdropDetails.creatorAddress && (
                 <div className="lg:w-2/3 p-4 md:p-6 bg-white text-safemoon-dark dark:bg-transparent dark:text-white border dark:border-gray-600 rounded-2xl">
-                  <div className="font-semibold text-lg">Claims ({allClaims?.length})</div>
+                  <div className="font-semibold text-lg">
+                    Claims ({allClaims?.length})
+                  </div>
                   <ul>
                     {allClaims?.length > 0 &&
                       allClaims?.map((claim, index) => (
