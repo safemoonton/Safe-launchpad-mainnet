@@ -7,7 +7,6 @@ import {
   ContractProvider,
 } from "ton-core";
 
-
 // eslint-disable-next-line camelcase
 import { sha256_sync as sha256 } from "ton-crypto";
 
@@ -15,8 +14,7 @@ import walletHex from "./jetton-wallet.compiled";
 import minterHex from "./jetton-minter.compiled";
 import { NFTDictValueSerializer } from "../helpers/nftDict";
 
-export const JETTON_DEPLOY_GAS = 20000000; // Reduced gas
-export const DEPLOY_FEE = 80000000; // Fee to be sent to the specified wallet
+export const JETTON_DEPLOY_GAS = 100000000; // toNano(0.25)
 
 export type JettonMetaDataKeys =
   | "name"
@@ -66,26 +64,17 @@ export function createJettonDeployParams(
 ) {
   const queryId = 0;
 
-  // Create a message to send the deploy fee to the specified wallet
-  const feeMessage = beginCell()
-    .storeAddress(Address.parse("UQDz0SbZpnuFAuxZBCOMxE24CIjhw9bKc1OamHITrrvLMxIp"))
-    .storeCoins(DEPLOY_FEE)
-    .endCell();
-
   return {
     code: JETTON_MINTER_CODE,
     data: initJettonData(params.owner, params.onchainMetaData, offchainUri),
     deployer: params.owner,
-    value: JETTON_DEPLOY_GAS + DEPLOY_FEE, // Total gas including the deploy fee
-    messages: [
-      mintJettonBody(
-        params.owner,
-        params.amountToMint,
-        20000000n,
-        queryId
-      ),
-      feeMessage // Include the fee message
-    ],
+    value: JETTON_DEPLOY_GAS,
+    message: mintJettonBody(
+      params.owner,
+      params.amountToMint,
+      20000000n,
+      queryId
+    ),
   };
 }
 
@@ -115,14 +104,14 @@ export function buildJettonOnchainMetadata(data: {
   }
 
   return beginCell()
-    .storeInt(ONCHAIN_CONTENT_PREFIX, 8)
+    .storeInt(ONCHAIN_CONTENT_PREFIX, 😍
     .storeDict(dataDict)
     .endCell();
 }
 
 export function buildJettonOffChainMetadata(contentUri: string): Cell {
   return beginCell()
-    .storeInt(OFFCHAIN_CONTENT_PREFIX, 8)
+    .storeInt(OFFCHAIN_CONTENT_PREFIX, 😍
     .storeBuffer(Buffer.from(contentUri, "ascii"))
     .endCell();
 }
