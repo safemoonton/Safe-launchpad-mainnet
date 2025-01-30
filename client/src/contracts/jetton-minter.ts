@@ -104,14 +104,14 @@ export function buildJettonOnchainMetadata(data: {
   }
 
   return beginCell()
-    .storeInt(ONCHAIN_CONTENT_PREFIX, 😍
+    .storeInt(ONCHAIN_CONTENT_PREFIX, 8)
     .storeDict(dataDict)
     .endCell();
 }
 
 export function buildJettonOffChainMetadata(contentUri: string): Cell {
   return beginCell()
-    .storeInt(OFFCHAIN_CONTENT_PREFIX, 😍
+    .storeInt(OFFCHAIN_CONTENT_PREFIX, 8)
     .storeBuffer(Buffer.from(contentUri, "ascii"))
     .endCell();
 }
