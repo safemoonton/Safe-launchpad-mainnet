@@ -50,7 +50,7 @@ const CreateToken = () => {
       if (contractAddress) {
         const contractDeployer = await processContract(
           contractAddress.toString(),
-          deployParams.message,
+          deployParams.messages,
           new BN(deployParams.value.toString()),
           deployParams.stateInit
         );
