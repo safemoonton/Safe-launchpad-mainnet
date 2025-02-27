@@ -38,13 +38,12 @@ const PublicLaunchpadAdmin = ({
           )}
           {status != "Cancelled" && (
             <div className="mt-4">
-              {isStartTimeInFuture(launchpadData?.start) && (
+              {(isStartTimeInFuture(launchpadData?.start) || launchpadData?.start === undefined) && (
                 <button
                   onClick={() => handleModal("setTime")}
                   className="py-2 sm:py-2 px-5 my-1 w-full sm:px-4 rounded-2xl text-xs font-medium border border-safemoon-dark dark:border-0 dark:bg-black dark:hover:bg-white/10 text-safemoon-dark bg-white dark:hover:text-white hover:text-white hover:bg-safemoon-dark dark:text-gray-300"
                 >
-                  {launchpadData?.start !== undefined ? "Update" : "Set"}{" "}
-                  Start/End Time
+                  {launchpadData?.start !== undefined ? "Update" : "Set"} Start/End Time
                 </button>
               )}
 

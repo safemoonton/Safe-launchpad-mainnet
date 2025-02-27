@@ -647,7 +647,7 @@ const PrivateLaunchpadDetails = () => {
 
               <div className="lg:w-1/3 ">
                 {/* ADMIN CONTROL */}
-                {launchpadData.creatorAddress == walletAddress && (
+                {walletAddress && launchpadData.creatorAddress == walletAddress && (
                   <LaunchpadAdmin
                     launchpadData={launchpadData}
                     contribution={contribution}
@@ -659,7 +659,7 @@ const PrivateLaunchpadDetails = () => {
                 {/* CONTRIBUTOR CONTROL */}
                 {status == "Upcoming" && (
                   <>
-                    {launchpadData.creatorAddress !== walletAddress && (
+                    {walletAddress && launchpadData.creatorAddress !== walletAddress && (
                       <div className="mt-4 mb-4 lg:mt-0 p-4 md:p-6 bg-white text-safemoon-dark dark:bg-transparent dark:text-white border dark:border-gray-600 rounded-2xl">
                         <p className="mb-2">Presale starts in:</p>
                         {launchpadData.start && (
@@ -693,7 +693,7 @@ const PrivateLaunchpadDetails = () => {
                 )}
                 {status == "Active" && (
                   <>
-                    {launchpadData.creatorAddress !== walletAddress && (
+                    {walletAddress && launchpadData.creatorAddress !== walletAddress && (
                       <div className="mt-4 mb-4 lg:mt-0 p-4 md:p-6 bg-white text-safemoon-dark dark:bg-transparent dark:text-white border dark:border-gray-600 rounded-2xl">
                         <p className="mb-2">Presale ends in:</p>
                         <Timer
@@ -774,7 +774,7 @@ const PrivateLaunchpadDetails = () => {
                 )}{" "}
                 {status == "Ended" && (
                   <>
-                    {launchpadData.creatorAddress !== walletAddress && (
+                    {walletAddress && launchpadData.creatorAddress !== walletAddress && (
                       <div className="mt-4 mb-4 lg:mt-0 p-4 md:p-6 bg-white text-safemoon-dark dark:bg-transparent dark:text-white border dark:border-gray-600 rounded-2xl">
                         <p className="mb-2">Presale has ended</p>
 
@@ -915,7 +915,7 @@ const PrivateLaunchpadDetails = () => {
               </div>
             </div>
 
-            {launchpadData.creatorAddress == walletAddress &&
+            {walletAddress && launchpadData.creatorAddress == walletAddress &&
               contribution.length > 0 && (
                 <div className="mb-4 md:mb-6 p-4 md:p-6 bg-white text-safemoon-dark dark:bg-transparent dark:text-white border dark:border-gray-600 rounded-2xl">
                   <div className="font-semibold text-lg">

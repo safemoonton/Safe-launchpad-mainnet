@@ -683,212 +683,226 @@ const LaunchpadDetails = () => {
                 {/* CONTRIBUTOR CONTROL */}
                 {status == "Upcoming" && (
                   <>
-                    {launchpadData.creatorAddress !== walletAddress && (
-                      <div className="mt-4 mb-4 lg:mt-0 p-4 md:p-6 bg-white text-safemoon-dark dark:bg-transparent dark:text-white border dark:border-gray-600 rounded-2xl">
-                        <p className="mb-2">Presale starts in:</p>
-                        {launchpadData.start && (
-                          <Timer
-                            startTime={launchpadData.start}
-                            endTime={launchpadData.end}
-                          />
-                        )}
+                    {walletAddress &&
+                      launchpadData.creatorAddress !== walletAddress && (
+                        <div className="mt-4 mb-4 lg:mt-0 p-4 md:p-6 bg-white text-safemoon-dark dark:bg-transparent dark:text-white border dark:border-gray-600 rounded-2xl">
+                          <p className="mb-2">Presale starts in:</p>
+                          {launchpadData.start && (
+                            <Timer
+                              startTime={launchpadData.start}
+                              endTime={launchpadData.end}
+                            />
+                          )}
 
-                        <div className="flex flex-col gap-2 mt-4">
-                          <div className="flex flex-row justify-between items-center">
-                            <div>{allContribution} TON</div>
-                            <div>{launchpadData.hard_cap} TON</div>
-                          </div>
-                          <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                            <div
-                              className="bg-blue-600 h-2.5 rounded-full"
-                              style={{
-                                width: `${
-                                  (Number(allContribution) /
-                                    Number(launchpadData.hard_cap)) *
-                                  100
-                                }%`,
-                              }}
-                            ></div>
+                          <div className="flex flex-col gap-2 mt-4">
+                            <div className="flex flex-row justify-between items-center">
+                              <div>{allContribution} TON</div>
+                              <div>{launchpadData.hard_cap} TON</div>
+                            </div>
+                            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                              <div
+                                className="bg-blue-600 h-2.5 rounded-full"
+                                style={{
+                                  width: `${
+                                    (Number(allContribution) /
+                                      Number(launchpadData.hard_cap)) *
+                                    100
+                                  }%`,
+                                }}
+                              ></div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    )}
+                      )}
                   </>
                 )}
                 {status == "Active" && (
                   <>
-                    {launchpadData.creatorAddress !== walletAddress && (
-                      <div className="mt-4 mb-4 lg:mt-0 p-4 md:p-6 bg-white text-safemoon-dark dark:bg-transparent dark:text-white border dark:border-gray-600 rounded-2xl">
-                        <p className="mb-2">Presale ends in:</p>
-                        {launchpadData.start && (
-                          <Timer
-                            startTime={launchpadData.start}
-                            endTime={launchpadData.end}
-                          />
-                        )}
+                    {walletAddress &&
+                      launchpadData.creatorAddress !== walletAddress && (
+                        <div className="mt-4 mb-4 lg:mt-0 p-4 md:p-6 bg-white text-safemoon-dark dark:bg-transparent dark:text-white border dark:border-gray-600 rounded-2xl">
+                          <p className="mb-2">Presale ends in:</p>
+                          {launchpadData.start && (
+                            <Timer
+                              startTime={launchpadData.start}
+                              endTime={launchpadData.end}
+                            />
+                          )}
 
-                        <div className="flex flex-col gap-2 mt-4">
-                          <div className="flex flex-row justify-between items-center">
-                            <div>{allContribution} TON</div>
-                            <div>{launchpadData.hard_cap} TON</div>
+                          <div className="flex flex-col gap-2 mt-4">
+                            <div className="flex flex-row justify-between items-center">
+                              <div>{allContribution} TON</div>
+                              <div>{launchpadData.hard_cap} TON</div>
+                            </div>
+                            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                              <div
+                                className="bg-blue-600 h-2.5 rounded-full"
+                                style={{
+                                  width: `${
+                                    (Number(allContribution) /
+                                      Number(launchpadData.hard_cap)) *
+                                    100
+                                  }%`,
+                                }}
+                              ></div>
+                            </div>
                           </div>
-                          <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                            <div
-                              className="bg-blue-600 h-2.5 rounded-full"
-                              style={{
-                                width: `${
-                                  (Number(allContribution) /
-                                    Number(launchpadData.hard_cap)) *
-                                  100
-                                }%`,
-                              }}
-                            ></div>
-                          </div>
-                        </div>
 
-                        {walletAddress ? (
-                          <div>
-                            <h2 className="font-semibold mt-4 mb-2">Amount</h2>
-                            <div className="flex items-center">
-                              <div className="py-4 px-4 rounded-2xl focus:outline-none focus:border-gray-400 text-gray-400 text-md bg-safemoon-dark font-medium w-full outline-none dark:text-white dark:bg-white/10 flex flex-row">
-                                <input
-                                  id="amountInput"
-                                  type="number"
-                                  value={amount}
-                                  onChange={handleChange}
-                                  className=" w-full h-full mr-2 outline-none bg-transparent dark:bg-transparent focus:bg-transparent"
-                                />
+                          {walletAddress ? (
+                            <div>
+                              <h2 className="font-semibold mt-4 mb-2">
+                                Amount
+                              </h2>
+                              <div className="flex items-center">
+                                <div className="py-4 px-4 rounded-2xl focus:outline-none focus:border-gray-400 text-gray-400 text-md bg-safemoon-dark font-medium w-full outline-none dark:text-white dark:bg-white/10 flex flex-row">
+                                  <input
+                                    id="amountInput"
+                                    type="number"
+                                    value={amount}
+                                    onChange={handleChange}
+                                    className=" w-full h-full mr-2 outline-none bg-transparent dark:bg-transparent focus:bg-transparent"
+                                  />
+                                </div>
                               </div>
+                              <div className="mt-2 text-xs flex flex-row justify-between">
+                                <p>Min: {launchpadData.min_buy} TON</p>
+                                <p>Max: {launchpadData.max_buy} TON</p>
+                              </div>
+                              <button
+                                onClick={handleBuy}
+                                className="mt-2 py-4 cursor-pointer text-center px-4 rounded-2xl border text-xs xl:text-sm font-medium dark:bg-black dark:hover:bg-white/10 hover:text-safemoon-dark hover:bg-white dark:hover:text-white text-white bg-gray-600 w-full dark:text-gray-300 hover:shadow-sm"
+                              >
+                                Buy
+                              </button>
                             </div>
-                            <div className="mt-2 text-xs flex flex-row justify-between">
-                              <p>Min: {launchpadData.min_buy} TON</p>
-                              <p>Max: {launchpadData.max_buy} TON</p>
+                          ) : (
+                            <div className="mt-4 flex justify-center items-center">
+                              <p>Connect your wallet</p>
                             </div>
-                            <button
-                              onClick={handleBuy}
-                              className="mt-2 py-4 cursor-pointer text-center px-4 rounded-2xl border text-xs xl:text-sm font-medium dark:bg-black dark:hover:bg-white/10 hover:text-safemoon-dark hover:bg-white dark:hover:text-white text-white bg-gray-600 w-full dark:text-gray-300 hover:shadow-sm"
-                            >
-                              Buy
-                            </button>
-                          </div>
-                        ) : (
-                          <div className="mt-4 flex justify-center items-center">
-                            <p>Connect your wallet</p>
-                          </div>
-                        )}
-                      </div>
-                    )}
+                          )}
+                        </div>
+                      )}
                   </>
                 )}{" "}
                 {status == "Ended" && (
                   <>
-                    {launchpadData.creatorAddress !== walletAddress && (
-                      <div className="mt-4 mb-4 lg:mt-0 p-4 md:p-6 bg-white text-safemoon-dark dark:bg-transparent dark:text-white border dark:border-gray-600 rounded-2xl">
-                        <p className="mb-2">Presale has ended</p>
+                    {walletAddress &&
+                      launchpadData.creatorAddress !== walletAddress && (
+                        <div className="mt-4 mb-4 lg:mt-0 p-4 md:p-6 bg-white text-safemoon-dark dark:bg-transparent dark:text-white border dark:border-gray-600 rounded-2xl">
+                          <p className="mb-2">Presale has ended</p>
 
-                        <div className="flex flex-col gap-2 mt-4">
-                          <div className="flex flex-row justify-between items-center">
-                            <div>{allContribution} TON</div>
-                            <div>{launchpadData.hard_cap} TON</div>
+                          <div className="flex flex-col gap-2 mt-4">
+                            <div className="flex flex-row justify-between items-center">
+                              <div>{allContribution} TON</div>
+                              <div>{launchpadData.hard_cap} TON</div>
+                            </div>
+                            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                              <div
+                                className="bg-blue-600 h-2.5 rounded-full"
+                                style={{
+                                  width: `${
+                                    (Number(allContribution) /
+                                      Number(launchpadData.hard_cap)) *
+                                    100
+                                  }%`,
+                                }}
+                              ></div>
+                            </div>
                           </div>
-                          <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                            <div
-                              className="bg-blue-600 h-2.5 rounded-full"
-                              style={{
-                                width: `${
-                                  (Number(allContribution) /
-                                    Number(launchpadData.hard_cap)) *
-                                  100
-                                }%`,
-                              }}
-                            ></div>
-                          </div>
-                        </div>
 
-                        {walletAddress ? (
-                          <>
-                            {Number(allContribution) >=
-                            Number(launchpadData.soft_cap) ? (
-                              <>
-                                {isAfter(
-                                  new Date(),
-                                  new Date(launchpadData.dexTime)
-                                ) && launchpadData.isAutoListed == true ? (
-                                  <>
-                                    {myContribution.length > 0 &&
-                                      myContribution.map(
-                                        (contribution, index) => (
-                                          <div className="mt-4" key={index}>
-                                            {!contribution.isClaimed && (
-                                              <button
-                                                onClick={() =>
-                                                  claim(contribution)
-                                                }
-                                                className="mb-1 py-2 sm:py-2 px-5 w-full sm:px-4 rounded-2xl text-xs font-medium  border border-safemoon-dark dark:border-0 dark:bg-black dark:hover:bg-white/10 text-safemoon-dark bg-white dark:hover:text-white hover:text-white hover:bg-safemoon-dark dark:text-gray-300"
-                                              >
-                                                Claim{" "}
-                                                {(
-                                                  Number(contribution.amount) /
-                                                  Number(
-                                                    launchpadData.token_price
-                                                  )
-                                                ).toFixed(2)}{" "}
-                                                {launchpadData.tokenInfo.symbol}
-                                              </button>
-                                            )}
-                                          </div>
-                                        )
-                                      )}
-                                  </>
-                                ) : (
-                                  <p className="mt-4">
-                                    {launchpadData.tokenInfo.symbol}'s Sale has
-                                    ended.{" "}
-                                    {launchpadData.dexTime == null
-                                      ? "Token listing time will be updated shortly"
-                                      : `Tokens will be listed on DEX on
+                          {walletAddress ? (
+                            <>
+                              {Number(allContribution) >=
+                              Number(launchpadData.soft_cap) ? (
+                                <>
+                                  {isAfter(
+                                    new Date(),
+                                    new Date(launchpadData.dexTime)
+                                  ) && launchpadData.isAutoListed == true ? (
+                                    <>
+                                      {myContribution.length > 0 &&
+                                        myContribution.map(
+                                          (contribution, index) => (
+                                            <div className="mt-4" key={index}>
+                                              {!contribution.isClaimed && (
+                                                <button
+                                                  onClick={() =>
+                                                    claim(contribution)
+                                                  }
+                                                  className="mb-1 py-2 sm:py-2 px-5 w-full sm:px-4 rounded-2xl text-xs font-medium  border border-safemoon-dark dark:border-0 dark:bg-black dark:hover:bg-white/10 text-safemoon-dark bg-white dark:hover:text-white hover:text-white hover:bg-safemoon-dark dark:text-gray-300"
+                                                >
+                                                  Claim{" "}
+                                                  {(
+                                                    Number(
+                                                      contribution.amount
+                                                    ) /
+                                                    Number(
+                                                      launchpadData.token_price
+                                                    )
+                                                  ).toFixed(2)}{" "}
+                                                  {
+                                                    launchpadData.tokenInfo
+                                                      .symbol
+                                                  }
+                                                </button>
+                                              )}
+                                            </div>
+                                          )
+                                        )}
+                                    </>
+                                  ) : (
+                                    <p className="mt-4">
+                                      {launchpadData.tokenInfo.symbol}'s Sale
+                                      has ended.{" "}
+                                      {launchpadData.dexTime == null
+                                        ? "Token listing time will be updated shortly"
+                                        : `Tokens will be listed on DEX on
                                     ${formatDateTime(
                                       launchpadData.dexTime
                                     )}(UTC)`}{" "}
+                                    </p>
+                                  )}
+                                </>
+                              ) : (
+                                <>
+                                  <p className="mt-4">
+                                    {launchpadData.tokenInfo.symbol}'s Sale
+                                    failed to reach Soft Cap of{" "}
+                                    {launchpadData.soft_cap} TON.
                                   </p>
-                                )}
-                              </>
-                            ) : (
-                              <>
-                                <p className="mt-4">
-                                  {launchpadData.tokenInfo.symbol}'s Sale failed
-                                  to reach Soft Cap of {launchpadData.soft_cap}{" "}
-                                  TON.
-                                </p>
-                                {myContribution.length > 0 &&
-                                  myContribution.map((contribution, index) => (
-                                    <div className="mt-4" key={index}>
-                                      {!contribution.isClaimed && (
-                                        <button
-                                          onClick={() =>
-                                            claimRefunds(contribution.amount)
-                                          }
-                                          className="mt-4 py-2 sm:py-2 px-5 my-1 w-full sm:px-4 rounded-2xl text-xs font-medium  border border-safemoon-dark dark:border-0 dark:bg-black dark:hover:bg-white/10 text-safemoon-dark bg-white dark:hover:text-white hover:text-white hover:bg-safemoon-dark dark:text-gray-300"
-                                        >
-                                          Claim Refund{"  "}
-                                          {Number(contribution.amount).toFixed(
-                                            2
-                                          )}{" "}
-                                          TON
-                                        </button>
-                                      )}
-                                    </div>
-                                  ))}
-                              </>
-                            )}
-                          </>
-                        ) : (
-                          <div className="mt-4 flex justify-center items-center">
-                            <p>Connect your wallet</p>
-                          </div>
-                        )}
-                      </div>
-                    )}
+                                  {myContribution.length > 0 &&
+                                    myContribution.map(
+                                      (contribution, index) => (
+                                        <div className="mt-4" key={index}>
+                                          {!contribution.isClaimed && (
+                                            <button
+                                              onClick={() =>
+                                                claimRefunds(
+                                                  contribution.amount
+                                                )
+                                              }
+                                              className="mt-4 py-2 sm:py-2 px-5 my-1 w-full sm:px-4 rounded-2xl text-xs font-medium  border border-safemoon-dark dark:border-0 dark:bg-black dark:hover:bg-white/10 text-safemoon-dark bg-white dark:hover:text-white hover:text-white hover:bg-safemoon-dark dark:text-gray-300"
+                                            >
+                                              Claim Refund{"  "}
+                                              {Number(
+                                                contribution.amount
+                                              ).toFixed(2)}{" "}
+                                              TON
+                                            </button>
+                                          )}
+                                        </div>
+                                      )
+                                    )}
+                                </>
+                              )}
+                            </>
+                          ) : (
+                            <div className="mt-4 flex justify-center items-center">
+                              <p>Connect your wallet</p>
+                            </div>
+                          )}
+                        </div>
+                      )}
                   </>
                 )}
                 {/* LAUNCHPAD DETAILS */}
@@ -919,7 +933,8 @@ const LaunchpadDetails = () => {
               </div>
             </div>
 
-            {launchpadData.creatorAddress == walletAddress &&
+            {walletAddress &&
+              launchpadData.creatorAddress == walletAddress &&
               contribution.length > 0 && (
                 <div className="mb-4 md:mb-6 p-4 md:p-6 bg-white text-safemoon-dark dark:bg-transparent dark:text-white border dark:border-gray-600 rounded-2xl">
                   <div className="font-semibold text-lg">
