@@ -282,7 +282,7 @@ const Layout = ({ children }) => {
                       toggleMenu={() => setIsMenuOpen(false)}
                     />
                     <footer className="text-center text-xs my-4">
-                      <p>&copy; {currentYear} Safemoon Launchpad</p>
+                      <p>&copy; {currentYear} Safemoon Launchpad Beta</p>
                     </footer>
                   </div>
                 </div>
